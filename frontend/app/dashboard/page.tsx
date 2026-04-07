@@ -44,7 +44,7 @@ export default function Page() {
   })
 
   useEffect(() => {
-    fetch("http://localhost:8000/images/list")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000"}/images/list`)
       .then(res => res.json())
       .then(data => {
         const total = data.total
